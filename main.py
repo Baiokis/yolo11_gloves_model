@@ -5,13 +5,14 @@ def main():
     model = YOLO("yolo11n.yaml")
 
     HYPERPARAMETERS = {
-        "epochs": 500,
-        "batch_size": 32,
-        "imgsz": 1080,
+        "epochs": 1000,
+        "batch_size": 64,
+        "imgsz": 768,
         "optimizer": "SGD",
         "device": "0",
         "workers": 8,
         "label_smoothing": 0.05,
+        "patience": 150
     }
 
     results = model.train(
@@ -19,19 +20,19 @@ def main():
         epochs=HYPERPARAMETERS["epochs"],
         batch=HYPERPARAMETERS["batch_size"],
         imgsz=HYPERPARAMETERS["imgsz"],
-        name=HYPERPARAMETERS["name"],
         optimizer=HYPERPARAMETERS["optimizer"],
         device=HYPERPARAMETERS["device"],
         workers=HYPERPARAMETERS["workers"],
         label_smoothing=HYPERPARAMETERS["label_smoothing"],
-        pretrained=False
+        pretrained=False,
+        patience=HYPERPARAMETERS["patience"]
     )
     metrics = model.val()
     print(metrics)
 
 #validar o modelo
 def validate_images():#
-    model = YOLO("modelos/best.pt")
+    model = YOLO("modelos/last.pt")
     
     image_folder = Path("fotos")
     
