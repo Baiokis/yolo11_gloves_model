@@ -13,8 +13,7 @@ rtsp_url = f"rtsp://{username}:{password}@{ip_camera}:{port}/cam/realmonitor?cha
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"Utilizando dispositivo: {device}")
 
-# Carregar o modelo YOLOv8/11
-model = YOLO('../modelos/best.pt')  # Certifique-se de que o modelo seja compatível
+model = YOLO('modelos/best.pt')
 
 classNames = ['Gloves', 'no-gloves']
 
