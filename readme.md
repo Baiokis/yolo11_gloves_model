@@ -12,7 +12,7 @@ Este repositório contém um modelo treinado para detecção de luvas usando YOL
 ## Estrutura do Repositório
 
 ```bash
-yolo11_glasses_model/
+yolo11_gloves_model/
 │── runs/            
 │── test/
 │── train/
