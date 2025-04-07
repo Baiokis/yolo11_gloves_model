@@ -3,8 +3,8 @@ import torch
 from ultralytics import YOLO
 
 # Configurações da câmera IP
-username = "admin"
-password = "autvix123456"
+username = "XPTO"
+password = "XPTO"
 ip_camera = "192.168.1.108"
 port = "554"
 rtsp_url = f"rtsp://{username}:{password}@{ip_camera}:{port}/cam/realmonitor?channel=1&subtype=0"
